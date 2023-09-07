@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
-    """Match bytecode provided in the task."""
+    """Match bytecode provided in the project."""
     from magic_calculation_102 import add, sub
 
     if a < b:
