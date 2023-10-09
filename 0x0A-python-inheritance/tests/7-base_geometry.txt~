@@ -1,0 +1,71 @@
+The `7-base_geometry.py` module
+-------------------------------
+
+Using the `BaseGeometry` class
+------------------------------
+
+Use Cases:
+----------
+
+1. Importing BaseGeometry from 7-base_geometry.py:
+   >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+2. Case of an integer:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("my_int", 10)
+
+3. Case of a negative integer:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("neg_int", -7)
+   Traceback (most recent call last):
+   	     ...
+   ValueError: neg_int must be greater than 0
+
+4. Case of a string:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string", "Oko")
+   Traceback (most recent call last):
+   	     ...
+   TypeError: string must be an integer
+
+5. Case of a 0:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("zero", 0)
+   Traceback (most recent call last):
+   	     ...
+   ValueError: zero must be greater than 0
+
+6. Case of a float:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string", 1.8)
+   Traceback (most recent call last):
+   	     ...
+   TypeError: string must be an integer
+
+7. Case of a list:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string", [2, 3])
+   Traceback (most recent call last):
+   	     ...
+   TypeError: string must be an integer
+
+8. Case of a boolean:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string", True)
+   Traceback (most recent call last):
+   	     ...
+   TypeError: string must be an integer
+
+9. Calling with 1 argument:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string")
+   Traceback (most recent call last):
+   	     ...
+   TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+11. Case of None:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("string", None)
+    Traceback (most recent call last):
+   	      ...
+    TypeError: string must be an integer
